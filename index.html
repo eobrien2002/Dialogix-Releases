@@ -6,6 +6,18 @@
   <title>Dialogix</title>
   <!-- Reference the provided CSS file -->
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Ensure the main container fills the viewport */
+    #root {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
   <div id="root">
@@ -15,7 +27,7 @@
     </header>
 
     <!-- Main Content -->
-    <main style="padding: 20px;">
+    <main>
       <!-- Download Section -->
       <section id="download-section" style="margin-bottom: 40px;">
         <h2>Download</h2>
@@ -48,8 +60,8 @@
   <script>
     // Change the version variable as needed.
     const version = "1.1.1";
-    document.getElementById("windows-download").href = `releases/${version}/Dialogix-Setup-${version}.exe`;
-    document.getElementById("macos-download").href = `releases/${version}/Dialogix-${version}.dmg`;
+    document.getElementById("windows-download").href = `https://github.com/eobrien2002/Dialogix-Releases/releases/${version}/Dialogix-Setup-${version}.exe`;
+    document.getElementById("macos-download").href = `https://github.com/eobrien2002/Dialogix-Releases/releases/${version}/Dialogix-${version}.dmg`;
   </script>
 </body>
 </html>
