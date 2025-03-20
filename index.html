@@ -52,7 +52,7 @@
         
         // Build the expected asset names using the extracted version.
         const windowsAssetName = `Dialogix-Setup-${version}.exe`;
-        const macAssetName = `Dialogix-Setup-${version}.dmg`; // Assuming Mac asset is a dmg; change if needed.
+        const macAssetName = `Dialogix-${version}.dmg`; // Assuming Mac asset is a dmg; change if needed.
 
         // Find the Windows asset by name.
         const windowsAsset = data.assets.find(asset => asset.name === windowsAssetName);
