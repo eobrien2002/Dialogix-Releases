@@ -1,1 +1,55 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dialogix</title>
+  <!-- Reference the provided CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="root">
+    <!-- Header with branding -->
+    <header class="header">
+      <h1 class="brand-name">Dialogix</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main style="padding: 20px;">
+      <!-- Download Section -->
+      <section id="download-section" style="margin-bottom: 40px;">
+        <h2>Download</h2>
+        <p>Download Dialogix for your platform:</p>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+          <a id="windows-download" class="button-primary" href="#">Download for Windows</a>
+          <a id="macos-download" class="button-primary" href="#">Download for macOS</a>
+        </div>
+      </section>
+
+      <!-- Privacy Policy Section -->
+      <section id="privacy-policy" style="margin-bottom: 40px;">
+        <h2>Privacy Policy</h2>
+        <p>
+          We only collect your name and email. Your data is stored securely in Google Firebase,
+          and authentication is handled via Google Authentication.
+          If you would like to have your data deleted, please email
+          <a href="mailto:eobrie22@uwo.ca">eobrie22@uwo.ca</a>.
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 10px 20px; background: var(--color-light-grey);">
+      <p>&copy; 2025 Dialogix. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- Script to set the version variable and update download links dynamically -->
+  <script>
+    // Change the version variable as needed.
+    const version = "1.1.1";
+    document.getElementById("windows-download").href = `releases/${version}/Dialogix-Setup-${version}.exe`;
+    document.getElementById("macos-download").href = `releases/${version}/Dialogix-${version}.dmg`;
+  </script>
+</body>
+</html>
