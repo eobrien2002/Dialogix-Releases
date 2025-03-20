@@ -1,82 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dialogix</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My GitHub Pages Site</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 2rem; }
-    h1, h2 { color: #333; }
-    section { margin-bottom: 2rem; }
-    a.download-link {
-      text-decoration: none;
-      color: #0066cc;
-      font-weight: bold;
-      border: 1px solid #0066cc;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: background-color 0.3s, color 0.3s;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+      padding: 50px;
     }
-    a.download-link:hover { background-color: #0066cc; color: #fff; }
+    header {
+      margin-bottom: 30px;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #888;
+    }
   </style>
 </head>
 <body>
-  <h1>Dialogix</h1>
-
-  <section>
-    <h2>Windows App</h2>
-    <p>
-      <a id="windowsDownload" class="download-link" href="#">Loading download link...</a>
-    </p>
-  </section>
-
-  <section>
-    <h2>MacOS App</h2>
-    <p>
-      <a id="macDownload" class="download-link" href="#">Loading download link...</a>
-    </p>
-  </section>
-
-  <script>
-    // GitHub repository details
-    const owner = "eobrien2002";
-    const repo = "Dialogix-Releases";
-    // API URL to get the latest release
-    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/releases/latest`;
-
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-        // Extract the version number from tag_name, removing a leading "v" if it exists.
-        const version = data.tag_name.startsWith("v") ? data.tag_name.substring(1) : data.tag_name;
-        
-        // Build the expected asset names using the extracted version.
-        const windowsAssetName = `Dialogix-Setup-${version}.exe`;
-        const macAssetName = `Dialogix-${version}.dmg`; // Assuming Mac asset is a dmg; change if needed.
-
-        // Find the Windows asset by name.
-        const windowsAsset = data.assets.find(asset => asset.name === windowsAssetName);
-        if (windowsAsset) {
-          document.getElementById("windowsDownload").href = windowsAsset.browser_download_url;
-          document.getElementById("windowsDownload").textContent = "Download Windows App";
-        } else {
-          document.getElementById("windowsDownload").textContent = "Windows App not available";
-        }
-
-        // Find the Mac asset by name.
-        const macAsset = data.assets.find(asset => asset.name === macAssetName);
-        if (macAsset) {
-          document.getElementById("macDownload").href = macAsset.browser_download_url;
-          document.getElementById("macDownload").textContent = "Download MacOS App";
-        } else {
-          document.getElementById("macDownload").textContent = "MacOS App not available";
-        }
-      })
-      .catch(error => {
-        console.error("Error fetching release info:", error);
-        document.getElementById("windowsDownload").textContent = "Error loading download link";
-        document.getElementById("macDownload").textContent = "Error loading download link";
-      });
-  </script>
+  <header>
+    <h1>Welcome to My GitHub Pages Site!</h1>
+  </header>
+  <main>
+    <p>This is a simple static HTML page hosted on GitHub Pages.</p>
+    <p>Feel free to modify this template to suit your needs.</p>
+  </main>
+  <footer>
+    <p>&copy; 2025 My GitHub Pages Site</p>
+  </footer>
 </body>
 </html>
