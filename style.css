@@ -1,0 +1,590 @@
+/* Global Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure root elements span full width and height */
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  background: white;
+  overflow-y: auto;
+}
+
+#root::-webkit-scrollbar {
+  display: none;
+}
+
+/* Root Variables */
+:root {
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-clean: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --color-primary: #093152;
+  --color-secondary: #007cb4;
+  --color-secondary-dark: #006190;
+  --color-tertiary: #c2deea;
+  --color-light-grey: #f1f3f5;
+  --color-light: #ffffff;
+  --color-dark: #333333;
+  --color-border: #ccc;
+  --color-error-bg: #f8d7da;
+  --color-error-text: #721c24;
+  --color-error: #d00;
+  --color-success-bg: #d4edda;
+  --color-success-text: #155724;
+  --color-link: #007cb4;
+  --color-bg: #1a1a1a;
+  --color-light-bg: #f0f4f8;
+  --color-text: #333;
+  --color-light-text: #555;
+  --color-success: #4caf50;
+  --color-info: #17a2b8;
+  --color-modal-overlay: rgba(0, 0, 0, 0.5);
+  --font-size-base: 14px;
+  --transition-speed: 0.3s;
+}
+
+/* Body Styling */
+body {
+  font-family: var(--font-family-clean);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: #ffffff; /* Keep main background white */
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Buttons */
+.button-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.button-primary:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+/* Input Fields */
+.input-field {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  font-weight: 300;
+  transition: border-color var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+}
+
+.input-field:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 124, 180, 0.3);
+}
+
+/* Dropdown Select */
+.dropdown-select {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 300 !important;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  background-color: #fff;
+  transition: border-color var(--transition-speed) ease;
+  margin-bottom: 15px;
+}
+
+.dropdown-select:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  font-weight: 300 !important;
+}
+
+/* Messages */
+.error-message {
+  color: var(--color-error);
+}
+
+.success-message {
+  color: var(--color-success-text);
+}
+
+.info-message {
+  color: var(--color-info);
+}
+
+.error-message,
+.success-message,
+.info-message {
+  text-align: center;
+  font-size: 13px;
+}
+
+/* Links */
+.link-button {
+  background: none;
+  border: none;
+  color: var(--color-link);
+  cursor: pointer;
+  font-size: 13px;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.link-button:hover {
+  color: var(--color-secondary);
+}
+
+/* Modal */
+.modal-title {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--color-text);
+}
+
+.modal-overlay {
+  background-color: var(--color-modal-overlay);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.modal-close-icon {
+  background: none;
+  border: none;
+  font-size: 28px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  color: var(--color-light-text);
+  transition: color var(--transition-speed) ease;
+}
+
+.modal-close-icon:hover {
+  color: var(--color-text);
+}
+
+.left-logo-button {
+  left: 16px;
+  position: absolute;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  transition: color var(--transition-speed) ease;
+}
+
+.logo-button:hover {
+  color: var(--color-primary);
+}
+
+.logo-icon {
+  font-size: 20px;
+  color: var(--color-light);
+}
+
+.right-logo-button {
+  position: absolute;
+  right: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  transition: color var(--transition-speed) ease;
+}
+
+.button-secondary {
+  background-color: #f7f7f7;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.button-secondary:hover {
+  background-color: #ebebeb;
+}
+
+.button-danger {
+  background-color: var(--color-error);
+  color: var(--color-light);
+  border: 1px solid var(--color-error);
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.button-danger:hover {
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error-bg);
+  color: var(--color-error);
+}
+
+/* Edit Button */
+.button-edit {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  border-radius: 18px;
+  padding: 6px 14px;
+  font-size: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  margin-top: 0;
+  gap: 6px;
+  transition: background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease,
+    border-color var(--transition-speed) ease;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .button-edit {
+    width: auto;
+    padding: 6px 14px;
+  }
+}
+
+.button-edit:hover,
+.button-edit.active {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* Delete Button */
+.delete-button {
+  background: transparent;
+  border: none;
+  color: var(--color-error);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 10px;
+  transition: color var(--transition-speed) ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-button:hover {
+  color: #a00;
+}
+
+.modal-message {
+  font-size: 14px;
+  color: var(--color-text);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.modal-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--color-primary);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Brand Name */
+.brand-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-light);
+}
+
+.button-edit {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease,
+    border-color var(--transition-speed) ease;
+}
+
+.button-edit:hover,
+.button-edit.active {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+.edit-icon {
+  color: var(--color-primary);
+  font-size: 14px;
+}
+
+.button-edit.active .edit-icon {
+  color: var(--color-light);
+}
+
+/* Add this rule to target the icon when the button is hovered */
+.button-edit:hover .edit-icon {
+  color: var(--color-light);
+}
+
+.spinner {
+  border: 4px solid var(--color-light);
+  border-top: 4px solid var(--color-primary);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+.spinner-small {
+  border: 2px solid var(--color-light);
+  border-top: 2px solid var(--color-primary);
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Invite Button */
+.classpage-button-invite {
+  position: absolute;
+  right: 16px;
+  background-color: var(--color-secondary);
+  color: #fff;
+  padding: 6px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.classpage-button-invite:hover {
+  background-color: var(color-secondary-dark);
+}
+
+.classpage-invite-icon {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .brand-name {
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 75%; /* Ensure it doesn't exceed its container */
+  }
+}
+
+/* Toggle Container */
+.toggle-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Toggle Label */
+.toggle-label {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* Hide default checkbox */
+.toggle-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-border);
+  transition: background-color var(--transition-speed);
+  border-radius: 20px;
+}
+
+/* Slider before (the circle) */
+.toggle-slider::before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--color-light);
+  transition: transform var(--transition-speed);
+  border-radius: 50%;
+}
+
+/* When checked */
+.toggle-input:checked + .toggle-slider {
+  background-color: var(--color-primary);
+}
+
+.toggle-input:checked + .toggle-slider::before {
+  transform: translateX(20px);
+}
+
+/* Toggle Title with Tooltip */
+.toggle-title {
+  position: relative;
+  font-size: 14px;
+  color: var(--color-text);
+  cursor: default;
+}
+
+/* Tooltip Styling */
+.toggle-title::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%; /* Position above the text */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding: 5px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-speed);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.toggle-title::before {
+  content: "";
+  position: absolute;
+  bottom: 115%; /* Position the arrow slightly below the tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--color-dark) transparent transparent transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-speed);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Show tooltip on hover */
+.toggle-title:hover::after,
+.toggle-title:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .toggle-title {
+    font-size: 13px;
+  }
+
+  .toggle-label {
+    width: 35px;
+    height: 18px;
+  }
+
+  .toggle-slider::before {
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+  }
+
+  .toggle-input:checked + .toggle-slider::before {
+    transform: translateX(18px);
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle-title {
+    font-size: 12px;
+  }
+
+  .toggle-label {
+    width: 30px;
+    height: 16px;
+  }
+
+  .toggle-slider::before {
+    height: 12px;
+    width: 12px;
+    left: 2px;
+    bottom: 2px;
+  }
+
+  .toggle-input:checked + .toggle-slider::before {
+    transform: translateX(16px);
+  }
+}
+
+/* Absent state styling */
+.flag.absent {
+  background-color: var(--color-error);
+  color: white;
+}
