@@ -1,6 +1,7 @@
 /* eslint-disable react/display-name */
 "use client";
 import FadeIn from "./FadeIn";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 /**
  * The original HTML referenced tab‑switching code but did not actually
@@ -17,11 +18,11 @@ const FeaturesSection = () => (
       <div className="bg-white rounded-xl shadow-lg overflow-hidden">
         <div className="relative ">
           <img
-            src="/demo_pic.png"
+            src={`${basePath}/demo_pic.png`}
             alt="Dialogix Platform Interface"
             className="w-full h-full object-contain object-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end">
             <div className="p-8 text-white">
               <h3 className="text-2xl font-bold mb-2">Dialogix Platform</h3>
               <p className="text-lg">

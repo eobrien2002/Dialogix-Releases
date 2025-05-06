@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const nav = [
   { href: "#problems", label: "Solutions" },
@@ -40,7 +41,11 @@ export default function Header() {
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="#">
-          <img src="/DialogixLogo.svg" alt="Dialogix Logo" className="h-8" />
+          <img
+            src={`${basePath}/DialogixLogo.svg`}
+            alt="Dialogix Logo"
+            className="h-8"
+          />
         </Link>
 
         {/* desktop nav */}

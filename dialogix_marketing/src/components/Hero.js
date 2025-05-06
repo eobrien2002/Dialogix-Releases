@@ -1,6 +1,8 @@
 import FadeIn from "./FadeIn";
 import Link from "next/link";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function HeroSection() {
   return (
     <section id="hero" className="relative h-screen overflow-hidden">
@@ -12,7 +14,7 @@ export default function HeroSection() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/herovid.mp4" type="video/mp4" />
+        <source src={`${basePath}/herovid.mp4`} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
