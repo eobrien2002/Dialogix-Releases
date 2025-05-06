@@ -2,7 +2,7 @@
 const nextConfig = {
   output: "export",
   basePath: "/Dialogix-Releases",
-  assetPrefix: "/Dialogix-Releases",
+  assetPrefix: "/Dialogix-Releases/dialogix_marketing/public/",
 };
 
 export default nextConfig;
