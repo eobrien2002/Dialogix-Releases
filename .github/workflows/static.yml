@@ -30,7 +30,7 @@ jobs:
       - name: Upload artifact (Root index.html)
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: dialogix_marketing/out
 
       - name: Deploy to GitHub Pages
         id: deployment
