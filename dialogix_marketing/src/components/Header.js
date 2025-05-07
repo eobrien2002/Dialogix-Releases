@@ -5,7 +5,6 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const nav = [
   { href: "#problems", label: "Solutions" },
-  { href: "#demo", label: "Demo" },
   { href: "#features", label: "Features" },
   { href: "#results", label: "Results" },
   { href: "#download", label: "Download" },
@@ -85,13 +84,13 @@ export default function Header() {
                 {label}
               </Link>
             ))}
-            <Link
+            {/* <Link
               href="#signup"
               className="bg-[var(--color-secondary)] hover:bg-[var(--color-secondaryDark)] text-white px-6 py-2 rounded-md text-center transition-colors duration-300"
               onClick={handleClick}
             >
               Sign&nbsp;Up
-            </Link>
+            </Link> */}
           </div>
         </div>
       )}

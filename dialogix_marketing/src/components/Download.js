@@ -22,9 +22,7 @@ export default function Download() {
               <i className="ri-windows-line ri-xl text-[var(--color-primary)]" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Download for Windows</h3>
-            <p className="text-gray-600 mb-4">
-              Compatible with Windows 10 and above.
-            </p>
+            <p className="text-gray-600 mb-4">Compatible with Windows 11.</p>
             <a
               id="windows-download"
               href={windowsDownload}
