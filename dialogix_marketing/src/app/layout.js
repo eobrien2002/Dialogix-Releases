@@ -3,8 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Dialogix - Transforming Classroom Engagement",
-  description: "A modern classroom engagement platform",
+  title: "Dialogix - A Modern Classroom Experience",
+  description:
+    "  Track attendance, manage participation, and minimize distractions—so you can focus on teaching, not tech",
 };
 
 export default function RootLayout({ children }) {
