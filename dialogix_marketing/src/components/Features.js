@@ -24,11 +24,10 @@ const FeaturesSection = () => (
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end">
             <div className="p-8 text-white">
-              <h3 className="text-2xl font-bold mb-2">Dialogix Platform</h3>
-              <p className="text-lg">
-                Teacher interface for discussion-based classrooms. Request a
-                demo to learn more.
-              </p>
+              <h3 className="text-2xl font-bold mb-2">
+                Dialogix for discussion-based classrooms
+              </h3>
+              <p className="text-lg">Request a demo to learn more.</p>
             </div>
           </div>
         </div>
