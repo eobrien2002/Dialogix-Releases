@@ -1,7 +1,7 @@
 import React from "react";
 import FadeIn from "./FadeIn"; // Ensure this component exists in your project
 
-const version = "2.0.0";
+const version = "2.0.1";
 const windowsDownload = `https://github.com/eobrien2002/Dialogix-Releases/releases/download/v${version}/Dialogix-Setup-${version}.exe`;
 const macDownload = `https://github.com/eobrien2002/Dialogix-Releases/releases/download/v${version}/Dialogix-${version}.dmg`;
 
