@@ -104,7 +104,7 @@ const FeaturesSection = () => (
           {
             icon: "user-location",
             title: "Attendance Tracking",
-            desc: "Automatically tracks attendance by comparing nearby Wi-Fi routers from the teacher's and student's devices to verify they are in the same location.",
+            desc: "Automatically tracks attendance by comparing nearby Wi-Fi routers from the educator's and student's devices to verify they are in the same location.",
           },
           {
             icon: "lock",
@@ -125,13 +125,13 @@ const FeaturesSection = () => (
             icon: "survey",
             badge: "Participation",
             title: "Automated Participation",
-            desc: "Algorithm automatically selects the least-participating student to encourage inclusive discussions and eliminate the need for teachers to manage raised hands.",
+            desc: "Algorithm automatically selects the least-participating student to encourage inclusive discussions and eliminate the need for educators to manage raised hands.",
           },
           {
             icon: "remote-control",
             badge: "Participation",
             title: "Clicker Control",
-            desc: "Set up clickers so the 'next slide' button selects the next student, and the 'previous slide' button resets the queue, so teachers can manage participation remotely.",
+            desc: "Set up clickers so the 'next slide' button selects the next student, and the 'previous slide' button resets the queue, so educators can manage participation remotely.",
           },
         ].map((feature) => (
           <FadeIn
